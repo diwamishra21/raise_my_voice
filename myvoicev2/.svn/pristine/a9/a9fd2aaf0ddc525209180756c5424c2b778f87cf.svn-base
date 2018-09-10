@@ -1,0 +1,70 @@
+
+
+
+<div class="container-fluid margin-top-60">
+    <div class="row">
+        <div class="col-sm-2 hidden-xs">
+            <div class="fixed-side-pane">
+                <ul>
+<?php $reports= $this->Url->build(['controller' => 'Users', 'action' => 'reports']);?>
+
+<?php $profiles= $this->Url->build(['controller' => 'Users', 'action' => 'profiles']);?>        
+            <li class="">
+<a class="smooth-scroll" href="<?= $reports ;?>">Reports</a></li>
+                   
+                    <li class="active"><a href="<?= $profiles ;?>">Profile</a></li>
+                </ul>
+                
+                <div class="company-logo">
+                    <div class="p-b-10"><small class="text-muted">Developed By</small></div>
+                    <div><img src="images/logo-quatrro.png" alt="Image of Company"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="container-fluid">
+                <div class="panel-block bg-transparent" id="profile">
+                    <h2 class="panel-block-title">Krithika Jain</h2>
+                </div>
+                <div class="panel-block">
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Position</label></div>
+                        <div class="col-md-8"><p class="panel-block-label">Supervisor</p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">City</label></div>
+                        <div class="col-md-8"><p class="panel-block-label">Ahmedabad</p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Work Location</label></div>
+                        <div class="col-md-8"><p class="panel-block-label">Naveda</p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Employee ID</label></div>
+                        <div class="col-md-8"><p class="panel-block-label">PSRT0089</p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Email ID</label></div>
+                        <div class="col-md-8"><p class="panel-block-label">krithika@gmail.com</p></div>
+                    </div>
+                </div>
+                <div class="panel-block" id="concerns-summary">
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Cases Assigned</label></div>
+                        <div class="col-md-8"><p class="panel-block-label">24</p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Cases Resolved</label></div>
+                        <div class="col-md-8"><p class="panel-block-label">12</p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">On Going</label></div>
+                        <div class="col-md-8"><p class="panel-block-label">12</p></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+

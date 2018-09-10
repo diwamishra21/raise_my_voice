@@ -1,0 +1,257 @@
+
+
+<div class="container-fluid margin-top-60">
+    <div class="row">
+        <div class="col-sm-2 hidden-xs">
+            <div class="fixed-side-pane">
+               
+               <ul>
+                    <li class=""><a class="smooth-scroll" href="reports.html">Reports</a></li>
+                    <li><a class="smooth-scroll" href="#statistics">Statistics</a></li>
+                    <li class=""><a class="smooth-scroll" href="messages.html">Messages</a></li>
+                   <li class="active"><a href="employee-records.html">Employee Records</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+               
+                <div class="company-logo">
+                    <div class="p-b-10"><small class="text-muted">Developed By</small></div>
+                    <div><img src="images/logo-quatrro.png" alt="Image of Company"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10">
+        
+        
+        
+            <div class="container-fluid">
+            
+              <?php foreach ($individual_user_detail as $individual_user_details): ?>
+                       <?php   endforeach; ?>
+                
+                  <div class="panel-block bg-transparent" id="reports">
+                    <h3 class="panel-block-title"><?= h($individual_user_details->c_title) ?>.</h3>
+                </div>
+                
+                
+                
+                <div class="panel-block" style="background:none;">
+                
+                  
+                    <div class="row panel-block-row panel-block-row-link">
+                        <div class="col-md-3"><label class="panel-block-label">Complain Id</label></div>
+                        <div class="col-md-7"><p class="panel-block-label"><?= h($individual_user_details->complaint_id) ?></p></div>
+                        <div class="col-md-2"><p class="panel-block-label"> </p></div>
+                    </div>
+                    <div class="row panel-block-row panel-block-row-link">
+                        <div class="col-md-3"><label class="panel-block-label">Filed On</label></div>
+                        <div class="col-md-7"><p class="panel-block-label"><?= h($individual_user_details->first_access) ?></p></div>
+                        <div class="col-md-2"><p class="panel-block-label"> </p></div>
+                    </div>
+                    <div class="row panel-block-row panel-block-row-link">
+                        <div class="col-md-3"><label class="panel-block-label">Current Status</label></div>
+                        <div class="col-md-7"><p class="panel-block-label"></p></div>
+                        <div class="col-md-2"><p class="panel-block-label"> </p></div>
+                    </div>
+                    <div class="row panel-block-row panel-block-row-link">
+                        <div class="col-md-3"><label class="panel-block-label">Last Updated By You</label></div>
+                        <div class="col-md-7"><p class="panel-block-label">July 25, 2017</p></div>
+                        <div class="col-md-2"><p class="panel-block-label"> </p></div>
+                    </div>
+                    
+                    <div class="row panel-block-row panel-block-row-link">
+                        <div class="col-md-3"><label class="panel-block-label">Last Received</label></div>
+                        <div class="col-md-7"><p class="panel-block-label">August 3, 2017</p></div>
+                        <div class="col-md-2"><p class="panel-block-label"> </p></div>
+                    </div>
+                    
+                </div>
+                
+                
+        <div class="row panel-block-row2 panel-block-row-link border" >
+        <div class="col-md-3 btn-dark2 emp-report-bar">
+        <br/>
+        <div class="inactive-btn1" >
+        <span class="prints" ><strong>Print</strong></span>
+        <strong class="emp-rept" >Employee's report</strong>
+        <span class="emp-rept_arrow"><img src="images/down-arrow.png" style="width:17px;"></span>
+        </div></div>
+       </div>
+     
+       <div class="row panel-block-row2 panel-block-row-link"> 
+         <div class="col-md-3 btn-dark2 emp-report-bar"><div class="inactive-btn1"> 
+           <br/>
+       <div class="row panel-block-row2 panel-block-row-link">
+                        <div class="col-md-3"><label class="employee-report-desc-heading">01. Issue</label></div>
+                    </div>
+                      <br/>
+                    
+            <div class="row panel-block-row2 panel-block-row-link">
+            <div class="col-md-7">
+            <ul class="emp-report-list">
+            <li class="panel-block-desc12"> Employee has categorized the issue as sexual harassment.</li>
+           	<li class="panel-block-desc12"> Employee is filling the report on behalf of self.</li>
+            <li class="panel-block-desc12"> Employee has tried to resolve this issue prior to filling the report.</li>
+            </ul>
+            </div>
+            </div>  
+            
+            <br/>  <br/>
+            
+        <div class="row panel-block-row2 panel-block-row-link">
+                        <div class="col-md-3"><label class="employee-report-desc-heading">02. Context</label></div>
+                        
+                    </div>  
+                    
+                    
+           <div class="panel-block emp-report-bar-bg" >
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Employee</label></div>
+                        <div class="col-md-8"><p class="panel-block-label"><?= h($individual_user_details->name) ?></p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">City</label></div>
+                        <div class="col-md-8"><p class="panel-block-label"><?= h($individual_user_details->city) ?></p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Work Location</label></div>
+                        <div class="col-md-8"><p class="panel-block-label"><?= h($individual_user_details->work_location) ?></p></div>
+                    </div>
+                     <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Business Unit</label></div>
+                        <div class="col-md-8"><p class="panel-block-label">---</p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Employee ID</label></div>
+                        <div class="col-md-8"><p class="panel-block-label"><?= h($individual_user_details->empid) ?></p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Email ID</label></div>
+                        <div class="col-md-8"><p class="panel-block-label"><?= h($individual_user_details->email) ?></p></div>
+                    </div>
+                </div>
+                     
+                       <br/>
+          <div class="row panel-block-row2 panel-block-row-link">
+                        <div class="col-md-3"><label class="employee-report-desc-heading">03. Statement</label></div>
+                        
+                    </div>  
+                    
+                    
+           <div class="panel-block emp-report-bar-bg" >
+                    <div class="row panel-block-row">
+                        <div class="col-md-72">
+                        <p class="panel-block-label statement-desc">July 21, 2017<br/><br/>
+                        To the Department of Human Resource,<br/><br/>
+                        I am writing this letter to complain about lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum.
+                        <br/><br/>
+                        lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum.
+                         <br/><br/>
+                        lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum.
+                        <br/><br/>
+                        <img src="images/audio.png">
+                        
+                        
+                        </p></div>
+                        <div class="col-md-8"><p class="panel-block-label"></p></div>
+                    </div>
+                   
+                   
+              
+                </div>     
+                
+                
+                 <br/>
+          <div class="row panel-block-row2 panel-block-row-link">
+                        <div class="col-md-3"><label class="employee-report-desc-heading">Attachments</label></div>
+                        
+                    </div>  
+                    
+                    
+           <div class="panel-block emp-report-bar-bg">
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label statement-desc">File 001</label></div>
+                        <div class="col-md-7"><p class="panel-block-label statement-desc">Uploaded on 01-02-2018</p></div>
+                         <div class="col-md-2"><label class="panel-block-label statement-desc">view | delete</label></div>
+                    </div>
+                   <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label statement-desc">File 002</label></div>
+                        <div class="col-md-7"><p class="panel-block-label statement-desc">Uploaded on 01-02-2018</p></div>
+                         <div class="col-md-2"><label class="panel-block-label statement-desc">view | delete</label></div>
+                    </div>
+                     <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label statement-desc">File 003</label></div>
+                        <div class="col-md-7"><p class="panel-block-label statement-desc">Uploaded on 01-02-2018</p></div>
+                         <div class="col-md-2"><label class="panel-block-label statement-desc">view | delete</label></div>
+                    </div>
+                   
+                </div>
+                
+          
+           <br/>  <br/>
+            
+        <div class="row panel-block-row2 panel-block-row-link">
+                        <div class="col-md-3"><label class="employee-report-desc-heading">04. Witnesses</label></div>
+                        
+                    </div>  
+                    
+                    <?php foreach ($witness_user_detail as $witness_user_details): ?>
+                       <?php   endforeach; ?>
+           <div class="panel-block emp-report-bar-bg" >
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Witness</label></div>
+                        <div class="col-md-8"><p class="panel-block-label"><?= h($witness_user_details->wi_name) ?></p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">City</label></div>
+                        <div class="col-md-8"><p class="panel-block-label"><?= h($witness_user_details->wi_city) ?></p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Work Location</label></div>
+                        <div class="col-md-8"><p class="panel-block-label"><?= h($witness_user_details->wi_location) ?></p></div>
+                    </div>
+                     <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Business Unit</label></div>
+                        <div class="col-md-8"><p class="panel-block-label"><?= h($witness_user_details->wi_bu) ?></p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Employee ID</label></div>
+                        <div class="col-md-8"><p class="panel-block-label"><?= h($witness_user_details->wi_empid) ?></p></div>
+                    </div>
+                    <div class="row panel-block-row">
+                        <div class="col-md-3"><label class="panel-block-label">Email ID</label></div>
+                        <div class="col-md-8"><p class="panel-block-label"><?= h($witness_user_details->wi_email_id) ?></p></div>
+                    </div>
+                </div>
+                
+                
+                      
+                            
+                       
+                    
+        </div> </div> </div>            
+       
+       
+       
+       
+                    
+                 <div class="panel-block" style="background:none;">
+                    <div class="row panel-block-row panel-block-row-link">
+                        <div class="col-md-emp-3"><button onclick="open_records()" class="btn btn-dark p-a-10" id="btn-proceed"><strong>Accept</strong> </button></div>
+                        <div class="col-md-7" style="float:left;"><div class="emp_desc">You will be assigned as the supervisor in charge for the above case</div></div>
+                        <div class="col-md-2"><p class="panel-block-label"> </p></div>
+                    </div>
+                    
+                    <div class="row panel-block-row panel-block-row-link">
+                        <div class="col-md-emp-3"><button onclick="open_records()" class="btn btn-dark p-a-10" id="btn-proceed"><strong>Recuse</strong> </button></div>
+                        <div class="col-md-7" style="float:left;"><div class="emp_desc" >Another Supervisor will be assigned to this case</div></div>
+                        <div class="col-md-2"><p class="panel-block-label"> </p></div>
+                    </div>
+                  </div>      
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+

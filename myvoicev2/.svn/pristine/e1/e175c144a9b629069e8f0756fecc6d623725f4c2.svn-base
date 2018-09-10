@@ -1,0 +1,58 @@
+$(document).ready(function () {
+    $(".btn").on("click",function () {
+        $(this).blur();
+    });
+
+    $(".smooth-scroll").on('click', function (event) {
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: ($(hash).offset().top - 75)
+        }, 800);
+
+        $(this).closest("ul").find(".active").removeClass("active");
+        $(this).closest("li").addClass("active");
+    });
+
+    $("#btn-previous").on("click", function () {
+        var currentCount = parseInt($("#concern-form .concern-form-section.active").attr("data-section-order")) - 1;
+        $("#concern-form .concern-form-section").removeClass("active").addClass("hidden");
+        $("#concern-form .concern-form-section[data-section-order='"+ (currentCount) +"']").removeClass("hidden").addClass("active");
+
+        if(currentCount < 6) {
+            $("#btn-proceed").removeClass("hidden");
+            $("#btn-download").addClass("hidden");
+        }
+
+        if(currentCount == 1) {
+            $("#btn-previous").addClass("hidden");
+        }
+
+        $('html, body').animate({
+            scrollTop: 0
+        }, 0);
+    });
+
+    $("#btn-proceed").on("click", function () {
+        var currentCount = parseInt($("#concern-form .concern-form-section.active").attr("data-section-order")) + 1;
+        $("#concern-form .concern-form-section").removeClass("active").addClass("hidden");
+        $("#concern-form .concern-form-section[data-section-order='"+ (currentCount) +"']").removeClass("hidden").addClass("active");
+
+        if(currentCount > 1 && currentCount < 5) {
+            $("#btn-previous").removeClass("hidden");
+            $("#btn-proceed").removeClass("hidden");
+        } else if (currentCount == 5) {
+            $("#btn-proceed").addClass("hidden");
+        }
+
+        if(currentCount == 6) {
+            $("#btn-proceed").addClass("hidden");
+            $("#btn-previous").addClass("hidden");
+            $("#btn-download").removeClass("hidden");
+            $("#btn-concerns").removeClass("hidden");
+        }
+
+        $('html, body').animate({
+            scrollTop: 0
+        }, 0);
+    });
+});

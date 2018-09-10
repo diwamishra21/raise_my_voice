@@ -1,0 +1,62 @@
+<?php
+namespace App\Model\Entity;
+
+use Cake\ORM\Entity;
+
+/**
+ * User Entity
+ *
+ * @property int $id
+ * @property string $empid
+ * @property bool $confirmed
+ * @property string $username
+ * @property string $password
+ * @property string $email
+ * @property string $bu
+ * @property string $department
+ * @property string $city
+ * @property string $work_location
+ * @property string $policy_agreed
+ * @property int $first_access
+ * @property int $last_access
+ * @property string $lastip
+ * @property bool $status
+ */
+class User extends Entity
+{
+
+    /**
+     * Fields that can be mass assigned using newEntity() or patchEntity().
+     *
+     * Note that when '*' is set to true, this allows all unspecified fields to
+     * be mass assigned. For security purposes, it is advised to set '*' to false
+     * (or remove it), and explicitly make individual fields accessible as needed.
+     *
+     * @var array
+     */
+    protected $_accessible = [
+        'empid' => true,
+        'confirmed' => true,
+        'username' => true,
+        'password' => true,
+        'email' => true,
+        'bu' => true,
+        'department' => true,
+        'city' => true,
+        'work_location' => true,
+        'policy_agreed' => true,
+        'first_access' => true,
+        'last_access' => true,
+        'lastip' => true,
+        'status' => true
+    ];
+
+    /**
+     * Fields that are excluded from JSON versions of the entity.
+     *
+     * @var array
+     */
+    protected $_hidden = [
+        'password'
+    ];
+}

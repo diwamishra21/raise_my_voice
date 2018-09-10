@@ -1,0 +1,38 @@
+corn_regarding
+ $('#error').text('*Please Fill All Details !');
+$(document).ready(function(){
+
+    $('#').click(function(){})
+
+        var valid = true;
+    if($('#concern_regarding').val() =='')
+    {
+      valid = false;
+    }
+    if(($('#concern_regarding').val() =='Others') && ($('#other_concern').val()==''))
+    {
+     valid = false;
+    }
+    if($('#colleague_complaint').val() =='')
+    {
+      valid = false;
+    }
+    if($('#resolve_complaint').val() =='')
+    {
+      valid = false;
+    }
+    if(valid == false)
+    {
+     /*swal("Warning!", "Please Fill All Details!", "warning");
+     alert("Fill Mandatory Fields");*/
+     
+    }
+    else
+    {
+     $('#error').text('');
+    }
+       
+    });
+    
+
+</script>

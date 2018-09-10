@@ -1,0 +1,479 @@
+<?=  $this->element('header');?>
+<body>
+<nav class="navbar navbar-default navbar-white navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <a class="navbar-brand" href="#"><?= $this->Html->image('logo.png')?> </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+		
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden-sm hidden-md hidden-lg border-bottom"><a href="index.html"><i class="fa fa-floppy-o"></i> Save Draft</a></li>
+                <li class="hidden-sm hidden-md hidden-lg border-bottom"><a href="index.html"><i class="fa fa-trash"></i> Delete Report</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, Anonymous<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Exit</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container-fluid margin-top-60">
+    <div class="row">
+        <div class="col-sm-2 hidden-xs">
+            <div class="fixed-side-pane">
+                <div class="p-a-10"><a href="#" class="btn btn-default btn-block p-a-10" data-toggle="modal" data-target="#email_verification"><i class="fa fa-floppy-o"></i> Save Draft</a></div>
+                <div class="p-a-10"><a href="" class="btn btn-default btn-block p-a-10"><i class="fa fa-trash"></i> Delete Report</a></div>
+                <div class="company-logo">
+                    <div class="p-b-10"><small class="text-muted">Developed By</small></div>
+                    <div><?= $this->Html->image('logo-quatrro.png')?>
+					</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="container-fluid" id="concern-form">
+                <div class="concern-form-section active" data-section-order="1">
+                    <div class="panel-block bg-transparent">
+                        <h2 class="panel-block-title" style="padding-top:40px;">Basic Details</h2>
+                    </div>
+                    <div class="panel-block">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="subject_title"></label>
+<?php
+          echo $this->Form->control('c_title', [
+    'label' => 'Subject Title','type'=>'text','class'=>'form-control','id'=>'subject_title'
+]); ?>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group" style="padding-top:25px;">
+                                    <label for="concern_regarding">What is this concern regarding? *</label>
+
+<?php $corn_regarding=array("Harassment"=>"Harassment","Disciplinary"=>"Disciplinary","Business Ethics"=>"Business Ethics","Others"=>"Others"); 
+echo $this->Form->select('concern_regarding',$corn_regarding,['class'=>'form-control','id'=>'concern_regarding','label' => 'What is this concern regarding? *','empty'=>'Choose an option']);
+  ?>                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group" style="padding-top:25px;">
+                                    <label for="other_concern">If others, please specify</label>
+<?php
+          echo $this->Form->control('other_concern', [
+    'label' => false,'type'=>'text','class'=>'form-control','id'=>'other_concern'
+]); ?>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group" style="padding-top:25px;">
+                                    <label for="colleague_complaint">Are You Registering This Complaint On Behalf Of Your Colleague? *</label>
+<?php $colleague_complaint=array("Yes"=>"Yes","No"=>"No"); 
+echo $this->Form->select('colleague_complaint',$colleague_complaint,['class'=>'form-control','id'=>'colleague_complaint','label' => 'Are You Registering This Complaint On Behalf Of Your Colleague? *','empty'=>'Choose an option']);
+  ?>   
+                        </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group" style="padding-top:25px;">
+                                    <label for="resolve_complaint">Have You Tried To Resolve This Issue On Your Own? *</label>
+
+<?php $resolve_complaint=array("Yes"=>"Yes","No"=>"No"); 
+echo $this->Form->select('resolve_complaint',$resolve_complaint,['class'=>'form-control','id'=>'resolve_complaint','label' => 'Have You Tried To Resolve This Issue On Your Own? *','empty'=>'Choose an option']);
+  ?>  
+
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="concern-form-section hidden" data-section-order="2">
+                    <div class="panel-block bg-transparent">
+                        <h2 class="panel-block-title" style="padding-top:40px;">Work Details</h2>
+                    </div>
+                    <div class="panel-block">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="business_unit"></label>
+<?php
+          echo $this->Form->control('bu', [
+    'label' => 'Business Unit','type'=>'text','class'=>'form-control','id'=>'business_unit'
+]); ?>
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="city"></label>
+<?php
+          echo $this->Form->control('bu', [
+    'label' => 'City','type'=>'text','class'=>'form-control','id'=>'city'
+]); ?>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="work_location"></label>
+<?php
+          echo $this->Form->control('work_location', [
+    'label' => 'Work Location','type'=>'text','class'=>'form-control','id'=>'work_location'
+]); ?>
+                               </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name"></label>
+<?php
+          echo $this->Form->control('name', [
+    'label' => 'Name','type'=>'text','class'=>'form-control','id'=>'work_location'
+]); ?>
+                             </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="employee_id"></label>
+<?php
+          echo $this->Form->control('empid', [
+    'label' => 'Employee ID','type'=>'text','class'=>'form-control','id'=>'employee_id'
+]); ?>
+                             </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email"></label>
+<?php
+          echo $this->Form->control('email', [
+    'label' => 'Email *','type'=>'text','class'=>'form-control','id'=>'email'
+]); ?>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phone_number"></label>
+<?php
+          echo $this->Form->control('mobile', [
+    'label' => 'Phone Number','type'=>'text','class'=>'form-control','id'=>'phone_number'
+]); ?>
+                             </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group" style="padding-top:20px;">
+                                    <label for="additional_notes">Additional Notes</label>
+<?php
+          echo $this->Form->textarea('notes', [
+    'label' => 'Additional Notes','class'=>'form-control','id'=>'additional_notes'
+]); ?>
+                <small class="text-muted">If you would like to, please share some of the details about your job description, your colleagues, etc, to give us some context of your work environment.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="concern-form-section hidden" data-section-order="3">
+                    <div class="panel-block bg-transparent">
+                        <h2 class="panel-block-title" style="padding-top:40px;">Complaint</h2>
+                    </div>
+                    <div class="panel-block">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="concern_details">Please explain your concern to us. Know that anything you say is completely confidential so please feel free to be specific about your concern and elaborate the issue. You may also attach any pertinent documents that you feel we should know about.</label>
+                                    <?php
+          echo $this->Form->textarea('concern_details', [
+    'label' => false,'class'=>'form-control','id'=>'concern_details'
+]); ?>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-1 text-center">
+                                            <div class="recording-icon">
+											<?= $this->Html->image('mic.svg')?>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 text-center">
+                                            <div class="recording-icon">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 text-right">
+                                            <div class="recording-icon inline-block">
+												<?= $this->Html->image('pause%201.svg')?>
+                                                
+                                            </div>
+                                            <div class="recording-icon inline-block">
+												<?= $this->Html->image('mic.svg')?>
+                                                
+                                            </div>
+                                            <div class="recording-icon inline-block">
+												<?= $this->Html->image('stop%201.svg')?>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <h4 class="m-t-7">Attachments</h4>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <button class="btn btn-dark p-a-10" onclick="$('#chooseFile').click()">+ Choose File</button>
+                                <input type="file" class="hidden" id="chooseFile">
+                            </div>
+                        </div>
+                        <div class="row m-t-20">
+                            <div class="col-xs-12">
+                                <ul class="list-group">
+                                    <li class="list-group-item border-none p-a-20">
+                                        <div class="row">
+                                            <div class="col-md-3 p-t-5">File 001</div>
+                                            <div class="col-md-6 p-t-5">Uploaded on 15th May</div>
+                                            <div class="col-md-3"><button class="btn btn-default status-active">View</button><button class="btn btn-default status-retracted">Delete</button></div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item border-none p-a-20">
+                                        <div class="row">
+                                            <div class="col-md-3 p-t-5">File 001</div>
+                                            <div class="col-md-6 p-t-5">Uploaded on 15th May</div>
+                                            <div class="col-md-3"><button class="btn btn-default status-active">View</button><button class="btn btn-default status-retracted">Delete</button></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="concern-form-section hidden" data-section-order="4">
+                    <div class="panel-block bg-transparent">
+                        <h2 class="panel-block-title">Witnesses</h2>
+                    </div>
+                    <div class="panel-block">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Please feel free to add a list of witnesses who may be able to support your claim.</h4>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <button class="btn btn-dark" data-toggle="modal" data-target="#myModal">+ Add Witness</button>
+                            </div>
+                        </div>
+                        <div class="row m-t-20">
+                            <div class="col-xs-12">
+                                <ul class="list-group">
+                                    <li class="list-group-item border-none p-a-20">
+                                        <div class="row">
+                                            <div class="col-md-3 p-t-5">John Doe</div>
+                                            <div class="col-md-3 p-t-5">Chennai</div>
+                                            <div class="col-md-3 p-t-5">EMP00012</div>
+                                            <div class="col-md-3"><button class="btn btn-default status-active">View</button><button class="btn btn-default status-retracted">Remove</button></div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item border-none p-a-20">
+                                        <div class="row">
+                                            <div class="col-md-3 p-t-5">John Doe</div>
+                                            <div class="col-md-3 p-t-5">Chennai</div>
+                                            <div class="col-md-3 p-t-5">EMP00012</div>
+                                            <div class="col-md-3"><button class="btn btn-default status-active">View</button><button class="btn btn-default status-retracted">Remove</button></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="concern-form-section hidden" data-section-order="5">
+                    <div class="panel-block bg-transparent">
+                        <h2 class="panel-block-title">Confirm</h2>
+                    </div>
+                    <div class="panel-block">
+                        <div class="row">
+                            <div class="col-md-3">
+							<?= $this->Html->image('captcha.jpg')?>
+                               
+                            </div>
+                            <div class="col-md-9">
+                                <label for="captcha">Enter the captcha</label>
+                                <input type="text" id="captcha" name="captcha" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row m-t-30">
+                            <div class="col-xs-12">
+                                <label><input type="checkbox"> I confirm that I have carefully read and accepted the <a href="#" class="text-blue">terms and conditions</a> for this action</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="concern-form-section hidden" data-section-order="6">
+                    <div class="panel-block">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div>
+                                    <h3>Your concern has been raised.</h3>
+                                </div>
+                                <div class="m-t-30">
+                                    <h4>In the coming days, our panel will review your application and take the appropriate action to address your concern. Thank you for your cooperation with us.</h4>
+                                </div>
+                                <div class="m-t-30">
+                                    <h4>The complaint ID is <strong class="text-blue">STEP0035A690075</strong></h4>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-a-20 text-center complaint-image">
+								<?= $this->Html->image('complaint%20box.svg')?>								
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-block form-navigation margin-bottom-30 bg-transparent">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="btn btn-dark p-a-10 hidden" id="btn-previous"><i class="fa fa-angle-left fa-lg p-r-20"></i> Step Back</button>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <button class="btn btn-dark p-a-10 hidden" id="btn-download"><i class="fa fa-file-pdf-o fa-lg p-r-20"></i> Download PDF</button>
+                        </div>
+                        <div class="col-md-4 text-right">
+                            <button class="btn btn-dark p-a-10" id="btn-proceed">Proceed <i class="fa fa-angle-right fa-lg p-l-20"></i> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add Witness</h4>
+            </div>
+            <div class="modal-body bg-light">
+                <form id="witness_form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="witness_name">Name</label>
+                                <input type="text" id="witness_name" name="witness_name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="witness_bu">Business Unit</label>
+                                <input type="text" id="witness_bu" name="witness_bu" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="witness_city">City</label>
+                                <input type="text" id="witness_city" name="witness_city" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="witness_work">Work Location</label>
+                                <input type="text" id="witness_work" name="witness_work" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="witness_emp_id">Employee ID</label>
+                                <input type="text" id="witness_emp_id" name="witness_emp_id" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="witness_email">Email ID</label>
+                                <input type="text" id="witness_email" name="witness_email" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="witness_relation">Relationship</label>
+                                <input type="text" id="witness_relation" name="witness_emp_id" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-dark">Add Witness</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="email_verification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Email Verification</h4>
+            </div>
+            <div class="modal-body bg-light">
+                <form id="email_form">
+                    <p>In order to save / submit your application as Anonymous, we will need to verify your email id. Please click on the verification link sent to your entered email id in order to complete the action.</p>
+                    <p>You will also be provided with a temporary username and password for you to return to, or track the progress of your application</p>
+                    <hr/>
+                    <div class="form-group">
+                        <label for="email_address">Email Address*</label>
+                        <input type="email" class="form-control" id="email_address" name="email">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-dark">Proceed</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<?=  $this->element('footer');?>

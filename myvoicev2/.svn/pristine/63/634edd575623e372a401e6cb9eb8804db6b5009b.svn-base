@@ -1,0 +1,11 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Formalities</title>
+</head>
+<body>
+<input type="textbox" name="name">
+<input type="submit" name="">
+</body>
+</html>

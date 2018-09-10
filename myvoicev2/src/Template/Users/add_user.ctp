@@ -1,0 +1,145 @@
+
+                <?php //$this->Flash->render('auth');?>
+                <?php echo $this->Flash->render(); ?>    
+                <?php echo $this->Form->create(); ?>
+
+<div class="container-fluid margin-top-60">
+    <div class="row">
+        <div class="col-sm-2 hidden-xs">
+            <div class="fixed-side-pane">
+               
+               <ul>
+                    <li class=""><a class="smooth-scroll" href="reports.html">Reports</a></li>
+                    <li><a class="smooth-scroll" href="#statistics">Statistics</a></li>
+                    <li><a class="smooth-scroll" href="messages.html">Messages</a></li>
+                   <li class="smooth-scroll"><a href="employee-records.html">Employee Records</a></li>
+                    <li><a class="smooth-scroll" href="profile.html">Profile</a></li>
+                    <li class="active"><a href="addsupervisor.html">Add User</a></li>
+                </ul>
+               
+                <div class="company-logo">
+                    <div class="p-b-10"><small class="text-muted">Developed By</small></div>
+                    <div><?= $this->Html->image('logo.png') ?></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="container-fluid" id="concern-form">
+                <div class="concern-form-section active" data-section-order="1">
+                    <div class="panel-block bg-transparent">
+                        <h2 class="panel-block-title">Add User</h2>
+<h5 style="color:red;" class="text-center"><?php echo $this->Flash->render(); ?>   </h5>
+                    </div>
+                    <div class="panel-block">
+                        <div class="row">
+
+ <?= $this->Form->create('Users',['url' => ['controller' => 'Users', 'action' => 'addUser']]); ?>
+                                   <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="bussiness_unit">User type*</label>
+                                    <?php $user_type=array('Admin'=>'Admin','HR'=>'HR','Panel Member'=>'Panel Member','Accuser'=>'Accuser','Supervisor'=>'Supervisor'); 
+echo $this->Form->select('user_type',$user_type,['class'=>'form-control','id'=>'','label' => 'User type*','empty'=>'Choose an option']); ?>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="bussiness_unit">Bussiness Unit *</label>
+                                    <?php $bussiness_unit=array('bu1'=>'bu1','bu2'=>'bu2','bu3'=>'bu3'); 
+echo $this->Form->select('bu',$bussiness_unit,['class'=>'form-control','id'=>'bussiness_unit','label' => 'Bussiness Unit *','empty'=>'Choose an option']); ?>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="work_location">Work Location *</label>
+                                    <?php $work_location=array('Gurgaon'=>'Gurgaon','Thane'=>'Thane','Chennai'=>'Chennai'); 
+echo $this->Form->select('work_location',$work_location,['class'=>'form-control','id'=>'city','label' => 'Work Location *','empty'=>'Choose an option']); ?>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <?php $city=array('Gurgaon'=>'Gurgaon','Thane'=>'Thane','Chennai'=>'Chennai'); 
+echo $this->Form->select('city',$city,['class'=>'form-control','id'=>'city','label' => 'city *','empty'=>'Choose an option']); ?>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label for="position">Position</label>
+                                   <?php echo $this->Form->control('position', ['label' => false,'type'=>'text','class'=>'form-control','id'=>'position']); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label for="name">Name</label>
+                                   <?php echo $this->Form->control('name', ['label' => false,'type'=>'text','class'=>'form-control','id'=>'name']); ?>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label for="employee_id">Employee Id</label>
+                                   <?php echo $this->Form->control('empid', ['label' => false,'type'=>'text','class'=>'form-control','id'=>'employee_id']); ?>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label for="email">Email</label>
+                                   <?php echo $this->Form->control('email', ['label' => false,'type'=>'text','class'=>'form-control','id'=>'email']); ?>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label for="mobile_no">Mobile No</label>
+                                   <?php echo $this->Form->control('mobile', ['label' => false,'type'=>'text','class'=>'form-control','id'=>'mobile_no']); ?>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                 <div class="form-group">
+                                   
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                 <div class="form-group">
+                                    <div class="col-md-4 text-center p-t-10" style="float:right;">
+                           <!-- <button onClick="open_records()" class="btn btn-dark p-a-10" id="btn-proceed">Search </button>-->
+       
+
+<?php $a = (string) microtime();
+$password = "My".substr($a, 2, 8);?>
+<?php echo $this->Form->control('password', ['label' => false,'type'=>'hidden','class'=>'form-control','id'=>'','value'=>$password ]); ?>
+<?php echo $this->Form->control('pass', ['label' => false,'type'=>'hidden','class'=>'form-control','id'=>'','value'=>$password ]); ?>
+
+  <?php echo $this->Form->button('Add', ['label' => false,'type'=>'text','class'=>'btn btn-default btn-dark btn-block']); ?>
+        
+        </a>
+                            
+                           
+                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php echo $this->Form->end();?>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+

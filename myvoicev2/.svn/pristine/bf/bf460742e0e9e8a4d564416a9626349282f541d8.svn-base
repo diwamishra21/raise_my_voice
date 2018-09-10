@@ -1,0 +1,16 @@
+<div class="col-sm-2 hidden-xs">
+            <div class="fixed-side-pane">
+               
+               <ul>
+                    <li class=""><a class="smooth-scroll" href="reports.html">Reports</a></li>
+                   
+                    <li><a href="profile.html">Profile</a></li>
+<li><a href="profile.html">Add Profile</a></li>
+                </ul>
+               
+                <div class="company-logo">
+                    <div class="p-b-10"><small class="text-muted">Developed By</small></div>
+                    <div> <?= $this->Html->image('logo-quatrro.png');?></div>
+                </div>
+            </div>
+        </div>

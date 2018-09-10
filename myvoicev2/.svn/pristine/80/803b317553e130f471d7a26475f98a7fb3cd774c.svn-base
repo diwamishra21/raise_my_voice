@@ -1,0 +1,58 @@
+<body class="login-wrapper">
+    <div class="login-outer-container">
+        <div class="login-inner-container">
+            <div class="centered-content">
+                <div class="login-logo">
+                     <?= $this->Html->image('logo.png') ?>
+                </div>
+                <div class="login-form m-t-30">
+				<?php $this->Flash->render('auth');?>
+				<?php echo $this->Form->create(); ?>
+                    <div class="form-group">
+					<?php echo $this->Form->input('username',["label"=>false,'type'=>'text','id'=>'username','name'=>'username','placeholder'=>'Username','class'=>'form-control']);?>
+                                          </div>
+                    <div class="form-group p-t-10">
+					<?php echo $this->Form->input('password',["label"=>false,'type'=>'password','id'=>'password','name'=>'password','placeholder'=>'Password','class'=>'form-control']);?>
+                                          </div>
+					
+					<div class="form-group p-t-10">
+                       <?php echo $this->Form->input('Sign In',['type'=>'submit','id'=>'','placeholder'=>'','class'=>'btn btn-default btn-dark btn-block']);?>
+                     
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="p-t-5">
+                                    <small class="text-muted"><a href="forgot-password.html">Forgot Password?</a></small>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="text-right p-t-5">
+								<?php $url3= $this->Url->build(['controller' => 'Users', 'action' => 'signup']);?>
+                                    <small class="text-muted"><a href="<?= $url3 ?>">Sign Up</a></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+							
+					
+					
+					<?php echo $this->Form->end();?>
+					
+					
+                    <div class="form-group text-center">
+                        <p>- OR -</p>
+                    </div>
+                    <div class="form-group">
+					<?php $url2= $this->Url->build(['controller' => 'Anonymous', 'action' => 'anonymousConfirmation']);?>
+                        <a href="<?= $url2 ;?>" class="btn btn-default btn-dark btn-block">Go Anonymous</a>
+                    </div>
+                    <div class="form-group login-quatrro-logo">
+                        <div class="p-b-10"><small class="text-muted">Developed By</small></div>
+                        <div>
+						<?= $this->Html->image('logo-quatrro.png') ?>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

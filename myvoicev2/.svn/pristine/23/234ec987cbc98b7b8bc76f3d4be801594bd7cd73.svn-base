@@ -1,0 +1,39 @@
+2018-06-11 12:47:46 Error: [PDOException] SQLSTATE[HY000] [1045] Access denied for user 'my_app'@'localhost' (using password: YES) in C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Database\Driver.php on line 92
+Stack Trace:
+#0 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Database\Driver.php(92): PDO->__construct('mysql:host=loca...', 'my_app', 'secret', Array)
+#1 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(106): Cake\Database\Driver->_connect('mysql:host=loca...', Array)
+#2 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Database\Connection.php(391): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 C:\xampp\htdocs\Myvoice\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(1034): Cake\Database\Connection->getSchemaCollection()
+#8 C:\xampp\htdocs\Myvoice\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(988): Bake\Shell\Task\ModelTask->_getAllTables()
+#9 C:\xampp\htdocs\Myvoice\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(1003): Bake\Shell\Task\ModelTask->listAll()
+#10 C:\xampp\htdocs\Myvoice\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(93): Bake\Shell\Task\ModelTask->listUnskipped()
+#11 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Console\Shell.php(532): Bake\Shell\Task\ModelTask->main()
+#12 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Console\Shell.php(525): Cake\Console\Shell->runCommand(Array, false, Array)
+#13 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Console\CommandRunner.php(342): Cake\Console\Shell->runCommand(Array, true)
+#14 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Console\CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#15 C:\xampp\htdocs\Myvoice\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#16 {main}
+
+
+2018-06-11 14:04:35 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'myvoice.practicas' doesn't exist in C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'practicas', Array, Object(Cake\Database\Schema\TableSchema))
+#1 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('practicas', Array)
+#2 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\ORM\Table.php(548): Cake\Database\Schema\CachedCollection->describe('practicas')
+#3 C:\xampp\htdocs\Myvoice\vendor\cakephp\bake\src\Shell\Task\FixtureTask.php(220): Cake\ORM\Table->getSchema()
+#4 C:\xampp\htdocs\Myvoice\vendor\cakephp\bake\src\Shell\Task\FixtureTask.php(179): Bake\Shell\Task\FixtureTask->readSchema('Practicas', 'practicas')
+#5 C:\xampp\htdocs\Myvoice\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(1138): Bake\Shell\Task\FixtureTask->bake('Practicas', 'practicas')
+#6 C:\xampp\htdocs\Myvoice\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(116): Bake\Shell\Task\ModelTask->bakeFixture('Practicas', 'practicas')
+#7 C:\xampp\htdocs\Myvoice\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(100): Bake\Shell\Task\ModelTask->bake('Practicas')
+#8 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Console\Shell.php(532): Bake\Shell\Task\ModelTask->main('Practicas')
+#9 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Console\Shell.php(525): Cake\Console\Shell->runCommand(Array, false, Array)
+#10 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Console\CommandRunner.php(342): Cake\Console\Shell->runCommand(Array, true)
+#11 C:\xampp\htdocs\Myvoice\vendor\cakephp\cakephp\src\Console\CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#12 C:\xampp\htdocs\Myvoice\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#13 {main}
+
+
